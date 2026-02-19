@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eduba | AI Training That Actually Sticks</title>
 <meta name="description" content="We don't teach what AI can do. We teach what to do with AI. 95% sustained adoption. Veteran-owned.">
+<meta property="og:title" content="Eduba | AI Training That Actually Sticks">
+<meta property="og:description" content="We don't teach what AI can do. We teach what to do with AI. 95% sustained adoption.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://services.eduba.io">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -75,16 +79,6 @@
     width: auto;
   }
 
-  .logo-text {
-    font-family: var(--serif);
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-
   /* ─── Nav Tabs ─── */
   .nav-tabs {
     display: flex;
@@ -127,15 +121,9 @@
   }
 
   /* ─── View Switching ─── */
-  .view {
-    display: none;
-  }
+  .view { display: none; }
+  .view.active { display: block; }
 
-  .view.active {
-    display: block;
-  }
-
-  /* Animate view transitions */
   .view.active > * {
     opacity: 0;
     animation: fadeUp 0.5s ease forwards;
@@ -143,29 +131,27 @@
 
   .view.active > *:nth-child(1) { animation-delay: 0s; }
   .view.active > *:nth-child(2) { animation-delay: 0.04s; }
-  .view.active > *:nth-child(3) { animation-delay: 0.08s; }
-  .view.active > *:nth-child(4) { animation-delay: 0.12s; }
-  .view.active > *:nth-child(5) { animation-delay: 0.16s; }
-  .view.active > *:nth-child(6) { animation-delay: 0.2s; }
-  .view.active > *:nth-child(7) { animation-delay: 0.24s; }
-  .view.active > *:nth-child(8) { animation-delay: 0.28s; }
-  .view.active > *:nth-child(9) { animation-delay: 0.32s; }
-  .view.active > *:nth-child(10) { animation-delay: 0.36s; }
-  .view.active > *:nth-child(11) { animation-delay: 0.4s; }
-  .view.active > *:nth-child(12) { animation-delay: 0.44s; }
-  .view.active > *:nth-child(13) { animation-delay: 0.48s; }
-  .view.active > *:nth-child(14) { animation-delay: 0.52s; }
-  .view.active > *:nth-child(15) { animation-delay: 0.56s; }
-  .view.active > *:nth-child(16) { animation-delay: 0.6s; }
-  .view.active > *:nth-child(17) { animation-delay: 0.64s; }
-  .view.active > *:nth-child(18) { animation-delay: 0.68s; }
-  .view.active > *:nth-child(19) { animation-delay: 0.72s; }
-  .view.active > *:nth-child(20) { animation-delay: 0.76s; }
+  .view.active > *:nth-child(3) { animation-delay: 0.04s; }
+  .view.active > *:nth-child(4) { animation-delay: 0.08s; }
+  .view.active > *:nth-child(5) { animation-delay: 0.08s; }
+  .view.active > *:nth-child(6) { animation-delay: 0.12s; }
+  .view.active > *:nth-child(7) { animation-delay: 0.12s; }
+  .view.active > *:nth-child(8) { animation-delay: 0.16s; }
+  .view.active > *:nth-child(9) { animation-delay: 0.16s; }
+  .view.active > *:nth-child(10) { animation-delay: 0.2s; }
+  .view.active > *:nth-child(11) { animation-delay: 0.2s; }
+  .view.active > *:nth-child(12) { animation-delay: 0.24s; }
+  .view.active > *:nth-child(13) { animation-delay: 0.24s; }
+  .view.active > *:nth-child(14) { animation-delay: 0.28s; }
+  .view.active > *:nth-child(15) { animation-delay: 0.28s; }
+  .view.active > *:nth-child(16) { animation-delay: 0.32s; }
+  .view.active > *:nth-child(17) { animation-delay: 0.32s; }
+  .view.active > *:nth-child(18) { animation-delay: 0.36s; }
+  .view.active > *:nth-child(19) { animation-delay: 0.36s; }
+  .view.active > *:nth-child(20) { animation-delay: 0.4s; }
 
   /* ─── Hero ─── */
-  .hero {
-    padding: 3rem 0 3.5rem;
-  }
+  .hero { padding: 3rem 0 3.5rem; }
 
   .hero h1 {
     font-family: var(--serif);
@@ -188,8 +174,26 @@
     line-height: 1.8;
   }
 
-  .hero-body p + p {
-    margin-top: 1rem;
+  .hero-body p + p { margin-top: 1rem; }
+
+  .hero-image {
+    margin-top: 2.5rem;
+  }
+
+  .hero-image img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+    max-height: 360px;
+  }
+
+  .hero-image-caption {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
   }
 
   /* ─── Divider ─── */
@@ -209,10 +213,34 @@
     margin-bottom: 1.25rem;
   }
 
-  /* ─── Stats ─── */
-  .stats {
-    padding: 3rem 0;
+  /* ─── Logo Strip ─── */
+  .logo-strip {
+    padding: 2.5rem 0;
   }
+
+  .logo-strip-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem 2.5rem;
+  }
+
+  .logo-strip-item {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .logo-strip-item:hover { opacity: 1; }
+
+  /* ─── Stats ─── */
+  .stats { padding: 3rem 0; }
 
   .stats-grid {
     display: grid;
@@ -243,9 +271,7 @@
   }
 
   /* ─── The Problem ─── */
-  .problem {
-    padding: 3rem 0;
-  }
+  .problem { padding: 3rem 0; }
 
   .problem p {
     font-size: 1.05rem;
@@ -253,14 +279,10 @@
     line-height: 1.8;
   }
 
-  .problem p + p {
-    margin-top: 1rem;
-  }
+  .problem p + p { margin-top: 1rem; }
 
   /* ─── How It Works ─── */
-  .process {
-    padding: 3rem 0;
-  }
+  .process { padding: 3rem 0; }
 
   .process-steps {
     display: grid;
@@ -303,9 +325,7 @@
   }
 
   /* ─── Proof ─── */
-  .proof {
-    padding: 3rem 0;
-  }
+  .proof { padding: 3rem 0; }
 
   .proof-cards {
     display: grid;
@@ -344,80 +364,81 @@
     font-weight: 600;
   }
 
-  /* ─── About ─── */
-  .about {
-    padding: 3rem 0;
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
-
-  .about-photo {
-    width: 140px;
-    height: 170px;
-    border-radius: 6px;
+  .proof-image {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 1rem;
     object-fit: cover;
-    background: var(--bg-warm);
-    border: 1px solid var(--border);
+    max-height: 180px;
   }
 
-  .about-photo-placeholder {
+  /* ─── Team ─── */
+  .team { padding: 3rem 0; }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .team-card { text-align: center; }
+
+  .team-photo {
     width: 140px;
-    height: 170px;
-    border-radius: 6px;
-    background: var(--bg-warm);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    text-align: center;
-    padding: 1rem;
-    line-height: 1.4;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.25rem;
+    display: block;
   }
 
-  .about-text h3 {
+  .team-card h3 {
     font-family: var(--serif);
     font-size: 1.15rem;
     font-weight: 500;
     color: var(--text);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.2rem;
   }
 
-  .about-text p {
-    font-size: 0.95rem;
-    line-height: 1.75;
+  .team-card .team-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
   }
 
-  .about-text p + p { margin-top: 0.75rem; }
+  .team-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-mid);
+    text-align: left;
+  }
 
-  .about-tags {
+  .team-card p + p { margin-top: 0.65rem; }
+
+  .team-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.4rem;
     margin-top: 1rem;
+    justify-content: center;
   }
 
-  .about-tag {
-    font-size: 0.72rem;
+  .team-tag {
+    font-size: 0.68rem;
     font-weight: 500;
     letter-spacing: 0.04em;
     color: var(--text-muted);
     background: var(--bg-warm);
-    padding: 0.3rem 0.7rem;
+    padding: 0.25rem 0.6rem;
     border-radius: 3px;
     border: 1px solid var(--border);
   }
 
   /* ─── Case Study Card ─── */
-  .case-study {
-    padding: 3rem 0;
-  }
+  .case-study { padding: 3rem 0; }
 
   .cs-card {
     background: var(--white);
@@ -430,6 +451,21 @@
 
   .cs-card:hover { border-color: var(--border-strong); }
   .cs-card:last-child { margin-bottom: 0; }
+
+  .cs-image {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+    max-height: 300px;
+  }
+
+  .cs-video {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    background: #111;
+  }
 
   .cs-header {
     display: flex;
@@ -563,9 +599,7 @@
   }
 
   /* ─── CTA ─── */
-  .cta {
-    padding: 3.5rem 0 2rem;
-  }
+  .cta { padding: 3.5rem 0 2rem; }
 
   .cta-box {
     background: var(--white);
@@ -695,14 +729,10 @@
     .header-tag { display: none; }
     .stats-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .proof-cards { grid-template-columns: 1fr; }
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .about-photo, .about-photo-placeholder {
-      width: 110px;
-      height: 130px;
-    }
+    .team-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .team-photo { width: 120px; height: 120px; }
+    .logo-strip-row { gap: 1rem 1.5rem; }
+    .logo-strip-item { font-size: 0.75rem; }
     .cs-header { flex-direction: column; gap: 0.35rem; }
     .cs-outcomes { grid-template-columns: 1fr; gap: 0.75rem; }
     .cs-outcomes.three-col { grid-template-columns: 1fr; }
@@ -751,6 +781,26 @@
       <div class="hero-body">
         <p>That's not a training problem. It's a translation problem. Someone needs to sit with your people, learn what they actually do all day, and show them exactly where these tools fit. Not in theory. In their workflows, with their data, on their deadlines.</p>
         <p>That's what we do.</p>
+      </div>
+      <div class="hero-image">
+        <img src="pacific-life-action.jpg" alt="Jake Van Clief leading an AI training session" loading="eager">
+        <div class="hero-image-caption">AI workflow training, 2025</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Trusted By -->
+    <section class="logo-strip">
+      <div class="section-label">Trusted by</div>
+      <div class="logo-strip-row">
+        <span class="logo-strip-item">Pacific Life</span>
+        <span class="logo-strip-item">Colgate-Palmolive</span>
+        <span class="logo-strip-item">KPMG UK</span>
+        <span class="logo-strip-item">IAG</span>
+        <span class="logo-strip-item">University of Edinburgh</span>
+        <span class="logo-strip-item">Correlation One</span>
+        <span class="logo-strip-item">British Council</span>
       </div>
     </section>
 
@@ -827,28 +877,45 @@
           <div class="proof-org">KPMG UK</div>
           <div class="proof-desc"><strong>40+ executives</strong> trained on strategic AI decision-making. Focused on when to invest in AI and when the answer is no.</div>
         </div>
-        <div class="proof-card wide">
+        <div class="proof-card">
+          <div class="proof-org">Academy of Intl. Affairs NRW</div>
+          <div class="proof-desc">AI ethics briefing to <strong>ambassadors and international affairs experts</strong> in Bonn. Presented research on AI governance and soft power measurement.</div>
+        </div>
+        <div class="proof-card">
           <div class="proof-org">University of Edinburgh</div>
-          <div class="proof-desc">Published research on <strong>psychometric assessment of large language models</strong>, applying validated psychological instruments to measure AI behavior. This research informs how we evaluate tools before recommending them.</div>
+          <div class="proof-desc"><strong>40+ professors</strong> trained on AI integration. Published research on <strong>psychometric assessment of large language models</strong>.</div>
         </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- About -->
-    <section class="about">
+    <!-- Team -->
+    <section class="team">
       <div class="section-label">Who you'd be working with</div>
-      <div class="about-grid">
-        <img src="headshot.jpg" alt="Jake Van Clief" class="about-photo">
-        <div class="about-text">
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="headshot.jpg" alt="Jake Van Clief" class="team-photo">
           <h3>Jake Van Clief</h3>
+          <div class="team-title">Founder &amp; CEO</div>
           <p>I spent eight years in the Marine Corps working on cryptographic systems and fighter jet avionics, where "close enough" isn't a concept that exists. That turned into a master's degree in governance and AI policy at the University of Edinburgh, which turned into this: helping organizations figure out what to actually do with AI, not just what it can theoretically do.</p>
           <p>The thing I've gotten good at is taking the biggest AI skeptics in a room and making their criticisms the most valuable part of the conversation. Healthy skepticism is an asset. We just need to point it at the right questions.</p>
-          <div class="about-tags">
-            <span class="about-tag">8 Years USMC</span>
-            <span class="about-tag">MSc Future Governance, Edinburgh</span>
-            <span class="about-tag">Veteran-Owned</span>
+          <div class="team-tags">
+            <span class="team-tag">8 Years USMC</span>
+            <span class="team-tag">MSc Future Governance, Edinburgh</span>
+            <span class="team-tag">Veteran-Owned</span>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="headshot-david.png" alt="David McDermott" class="team-photo">
+          <h3>David McDermott</h3>
+          <div class="team-title">Chief Architect</div>
+          <p>David brings over a decade of software engineering experience across defense, gaming, and enterprise systems. He holds an MS in Computer Science from the University of Iowa and has built production systems at BAE Systems, Epic Games, and Derivco.</p>
+          <p>He architects Eduba's technical infrastructure, including EdubaWare and the agent routing systems that underpin the training platform. David is the person who makes sure the things we teach people to build actually work at scale.</p>
+          <div class="team-tags">
+            <span class="team-tag">MS Computer Science, Iowa</span>
+            <span class="team-tag">BAE Systems</span>
+            <span class="team-tag">Epic Games</span>
           </div>
         </div>
       </div>
@@ -889,6 +956,7 @@
     <section class="case-study">
       <div class="section-label">Enterprise Training</div>
       <div class="cs-card">
+        <img src="crowd-pacific-life.jpg" alt="Training room at Pacific Life with employees at tables" class="cs-image" loading="lazy">
         <div class="cs-header">
           <div class="cs-org">Pacific Life &amp; Colgate-Palmolive</div>
           <div class="cs-type">Ongoing</div>
@@ -927,6 +995,7 @@
     <section class="case-study">
       <div class="section-label">Executive Advisory</div>
       <div class="cs-card">
+        <img src="crowd-iag.jpg" alt="Executive workshop with attendees at round tables" class="cs-image" loading="lazy">
         <div class="cs-header">
           <div class="cs-org">KPMG UK</div>
           <div class="cs-type">Completed</div>
@@ -949,6 +1018,31 @@
           <span class="cs-tag">Strategic AI Decision-Making</span>
           <span class="cs-tag">Executive Workshop</span>
           <span class="cs-tag">Global Consultancy</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Academy of Intl Affairs NRW -->
+    <section class="case-study">
+      <div class="section-label">International Policy &amp; Governance</div>
+      <div class="cs-card">
+        <img src="bonn-workshop.jpg" alt="Academy of International Affairs NRW workshop group photo in Bonn" class="cs-image" loading="lazy">
+        <div class="cs-header">
+          <div class="cs-org">Academy of International Affairs NRW</div>
+          <div class="cs-type">Ongoing</div>
+        </div>
+        <div class="cs-context">AIA Fellow Workshop &nbsp;·&nbsp; Bonn, Germany</div>
+        <div class="cs-body">
+          <p>An AI ethics and governance briefing for ambassadors and international affairs experts, focused on how AI tools are reshaping soft power and influence measurement across 25+ countries. The workshop brought together researchers from the British Council, the British Foreign Policy Group, Ben Gurion University, and other institutions to discuss what happens when the tools we use to measure influence start changing the influence itself.</p>
+          <p>Presented the Ethics Engine research alongside ongoing work with ICR and the British Council on international soft power, connecting the psychometric evaluation of AI models to the broader question of how governments and institutions should think about the tools they're adopting.</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-tag">AI Ethics</span>
+          <span class="cs-tag">International Policy</span>
+          <span class="cs-tag">Ambassador Briefing</span>
+          <span class="cs-tag">Soft Power</span>
         </div>
       </div>
     </section>
@@ -985,13 +1079,28 @@
     <section class="case-study">
       <div class="section-label">Defense &amp; Intelligence</div>
       <div class="cs-card">
+        <video class="cs-video" controls preload="none" poster="vigilore-dashboard.png">
+          <source src="vigilore-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
         <div class="cs-header">
           <div class="cs-org">Vigilore &nbsp;/&nbsp; Armetour</div>
           <div class="cs-type">Ongoing</div>
         </div>
-        <div class="cs-context">AI Integration for Defense Operations</div>
+        <div class="cs-context">AI Integration for Defense Operations &nbsp;·&nbsp; Full product design &amp; production by Eduba</div>
         <div class="cs-body">
           <p>Working with Armetour's defense and intelligence teams to integrate AI capabilities into operational workflows. This engagement draws on the same zero-defect thinking that comes from working on systems where failure isn't an abstraction. When the stakes are this high, computational orchestration matters: knowing which layer each problem belongs on, whether that's AI, traditional code, human judgment, or a decision not to build it at all.</p>
+          <p>VigilOre is the system that came out of this work: a multi-agent compliance platform for DRC mining operations. Four specialized agents handle document intake, aggregation, comparison, and reporting across multilingual regulatory frameworks. The entire product, from architecture to the demo video above, was designed and produced by Eduba.</p>
+        </div>
+        <div class="cs-outcomes">
+          <div class="cs-outcome-item">
+            <div class="cs-outcome-num">160<span>+</span></div>
+            <div class="cs-outcome-label">hours of manual compliance<br>work per cycle, before</div>
+          </div>
+          <div class="cs-outcome-item">
+            <div class="cs-outcome-num">&lt;5</div>
+            <div class="cs-outcome-label">minutes to process the same<br>documents now</div>
+          </div>
         </div>
         <div class="cs-quote">
           <p>&ldquo;Always ahead of the competition and ready to deliver and exceed expectations.&rdquo;</p>
@@ -1000,7 +1109,8 @@
         <div class="cs-tags">
           <span class="cs-tag">Defense</span>
           <span class="cs-tag">Intelligence</span>
-          <span class="cs-tag">Computational Orchestration</span>
+          <span class="cs-tag">Multi-Agent Systems</span>
+          <span class="cs-tag">Full Product Build</span>
         </div>
       </div>
     </section>
@@ -1011,6 +1121,7 @@
     <section class="case-study">
       <div class="section-label">Research</div>
       <div class="cs-card">
+        <img src="ethics-engine-ui.png" alt="Ethics Engine interface showing psychometric assessment dashboard" class="cs-image" loading="lazy">
         <div class="cs-header">
           <div class="cs-org">The Ethics Engine</div>
           <div class="cs-type">Published</div>
@@ -1018,12 +1129,13 @@
         <div class="cs-context">Neuroplastics Lab, University of Edinburgh &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2510.11742" class="cs-link" style="margin-top:0;display:inline;">arxiv.org/abs/2510.11742</a></div>
         <div class="cs-body">
           <p>Most organizations choose AI tools based on marketing. We built a methodology to evaluate them using validated psychological instruments, the same psychometric frameworks applied to humans, now applied at scale to large language models. The Ethics Engine gives organizations something they've never had before: an empirical, repeatable way to assess the behavioral tendencies of the models they're trusting with their work.</p>
-          <p>Being able to evaluate these models at all was the hard part. Doing it at scale is what makes it useful.</p>
+          <p>Being able to evaluate these models at all was the hard part. Doing it at scale is what makes it useful. This research was also presented at UKICER 2025 under "AI Workflows: Honest, Transparent, Reusable Work" and formed the basis of the AI governance briefing at the Academy of International Affairs NRW.</p>
         </div>
         <div class="cs-tags">
           <span class="cs-tag">Psychometric Assessment</span>
           <span class="cs-tag">LLM Evaluation</span>
           <span class="cs-tag">Published Research</span>
+          <span class="cs-tag">UKICER 2025</span>
           <span class="cs-tag">University of Edinburgh</span>
         </div>
       </div>
@@ -1035,16 +1147,20 @@
     <section class="case-study">
       <div class="section-label">Academic Publishing</div>
       <div class="cs-card">
+        <img src="icr-roundtable.jpg" alt="ICR research roundtable discussion in Bonn" class="cs-image" loading="lazy">
         <div class="cs-header">
           <div class="cs-org">ICR Research</div>
           <div class="cs-type">Published</div>
         </div>
-        <div class="cs-context">Research Engagement</div>
+        <div class="cs-context">British Council-Commissioned Research &nbsp;·&nbsp; International Soft Power</div>
         <div class="cs-body">
+          <p>Applying machine learning and NLP to map how ideas transform as they cross borders, for British Council-commissioned research on international soft power. The work uses AI to do what would take a research team months: trace influence patterns across languages, institutions, and policy frameworks.</p>
           <p>The engagement went well enough that ICR made a decision they hadn't made in over a decade: they wanted to produce a hard copy of the study. That's not a metric you find on a dashboard, but it tells you something about the quality of the work. When a research organization breaks a ten-year pattern to put your findings in print, the work did its job.</p>
         </div>
         <div class="cs-tags">
-          <span class="cs-tag">Research</span>
+          <span class="cs-tag">British Council</span>
+          <span class="cs-tag">Soft Power Research</span>
+          <span class="cs-tag">NLP &amp; Machine Learning</span>
           <span class="cs-tag">First Hard Copy in 10+ Years</span>
         </div>
       </div>
@@ -1056,14 +1172,15 @@
     <section class="case-study">
       <div class="section-label">Where it started</div>
       <div class="cs-card">
+        <img src="eduba-labs-efi.jpg" alt="Eduba Labs advertisement at Edinburgh Futures Institute" class="cs-image" loading="lazy">
         <div class="cs-header">
-          <div class="cs-org">Flagler College</div>
-          <div class="cs-type">2022-2024</div>
+          <div class="cs-org">Flagler College &amp; Edinburgh Futures Institute</div>
+          <div class="cs-type">2022-2025</div>
         </div>
-        <div class="cs-context">Faculty AI Workshops &amp; Academic Research &nbsp;·&nbsp; St. Augustine, FL</div>
+        <div class="cs-context">Faculty AI Workshops &amp; Academic Research &nbsp;·&nbsp; St. Augustine, FL &amp; Edinburgh, UK</div>
         <div class="cs-body">
           <p>Before the Fortune 500 engagements, before the global consultancies, the work started here. After using AI to produce research that was accepted to Flagler's Saints Academic Review, faculty started asking how it was done. That turned into contracted AI workshops for the college, teaching professors how to think about these tools in the classroom.</p>
-          <p>It was the first time the tables turned from student to teacher, and it proved something that still holds: the people most skeptical of AI often become its most thoughtful adopters, if someone takes the time to connect it to their actual work.</p>
+          <p>It was the first time the tables turned from student to teacher, and it proved something that still holds: the people most skeptical of AI often become its most thoughtful adopters, if someone takes the time to connect it to their actual work. The work continued at the University of Edinburgh, where Eduba Labs ran experimental workshops at the Edinburgh Futures Institute for faculty exploring AI in education.</p>
         </div>
         <div class="cs-quote">
           <p>&ldquo;Whoa, this is a really good use of AI. How do you do this?&rdquo;</p>
@@ -1073,6 +1190,7 @@
         <div class="cs-tags">
           <span class="cs-tag">Higher Education</span>
           <span class="cs-tag">Faculty Training</span>
+          <span class="cs-tag">Edinburgh Futures Institute</span>
           <span class="cs-tag">Where It All Started</span>
         </div>
       </div>
@@ -1103,7 +1221,7 @@
     <div class="footer-right">
       <a href="https://youtube.com/@JEVanClief" class="footer-link">YouTube</a>
       <a href="https://github.com/RinDig" class="footer-link">GitHub</a>
-      <a href="https://linkedin.com/in/" class="footer-link">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/jake-van-clief-74b66915a/" class="footer-link">LinkedIn</a>
     </div>
   </footer>
 
@@ -1115,31 +1233,21 @@
   const views = document.querySelectorAll('.view');
 
   function switchView(viewName) {
-    // Update tabs
     tabs.forEach(t => t.classList.toggle('active', t.dataset.view === viewName));
-
-    // Update views
     views.forEach(v => v.classList.remove('active'));
     const target = document.getElementById('view-' + viewName);
     if (target) {
       target.classList.add('active');
-      // Re-trigger animations by briefly removing and re-adding
       target.querySelectorAll(':scope > *').forEach(el => {
         el.style.animation = 'none';
-        el.offsetHeight; // force reflow
+        el.offsetHeight;
         el.style.animation = '';
       });
     }
-
-    // Update page title
     document.title = viewName === 'cases'
       ? 'Eduba | Case Studies'
       : 'Eduba | AI Training That Actually Sticks';
-
-    // Update URL hash without scrolling
     history.replaceState(null, '', viewName === 'home' ? window.location.pathname : '#cases');
-
-    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -1147,7 +1255,6 @@
     tab.addEventListener('click', () => switchView(tab.dataset.view));
   });
 
-  // Handle direct link to #cases
   if (window.location.hash === '#cases') {
     switchView('cases');
   }
