@@ -37,7 +37,6 @@
     min-height: 100vh;
   }
 
-  /* Subtle paper texture */
   body::before {
     content: '';
     position: fixed;
@@ -65,12 +64,17 @@
     animation: fadeIn 0.5s ease forwards;
   }
 
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
   .logo-img {
     height: 32px;
     width: auto;
   }
 
-  /* Fallback text logo if no image */
   .logo-text {
     font-family: var(--serif);
     font-size: 1.2rem;
@@ -81,6 +85,39 @@
     text-decoration: none;
   }
 
+  /* ─── Nav Tabs ─── */
+  .nav-tabs {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+  }
+
+  .nav-tab {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+
+  .nav-tab:hover {
+    color: var(--text-mid);
+    background: var(--bg-warm);
+  }
+
+  .nav-tab.active {
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid var(--border);
+    font-weight: 600;
+  }
+
   .header-tag {
     font-size: 0.72rem;
     font-weight: 500;
@@ -89,11 +126,45 @@
     color: var(--text-muted);
   }
 
+  /* ─── View Switching ─── */
+  .view {
+    display: none;
+  }
+
+  .view.active {
+    display: block;
+  }
+
+  /* Animate view transitions */
+  .view.active > * {
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .view.active > *:nth-child(1) { animation-delay: 0s; }
+  .view.active > *:nth-child(2) { animation-delay: 0.04s; }
+  .view.active > *:nth-child(3) { animation-delay: 0.08s; }
+  .view.active > *:nth-child(4) { animation-delay: 0.12s; }
+  .view.active > *:nth-child(5) { animation-delay: 0.16s; }
+  .view.active > *:nth-child(6) { animation-delay: 0.2s; }
+  .view.active > *:nth-child(7) { animation-delay: 0.24s; }
+  .view.active > *:nth-child(8) { animation-delay: 0.28s; }
+  .view.active > *:nth-child(9) { animation-delay: 0.32s; }
+  .view.active > *:nth-child(10) { animation-delay: 0.36s; }
+  .view.active > *:nth-child(11) { animation-delay: 0.4s; }
+  .view.active > *:nth-child(12) { animation-delay: 0.44s; }
+  .view.active > *:nth-child(13) { animation-delay: 0.48s; }
+  .view.active > *:nth-child(14) { animation-delay: 0.52s; }
+  .view.active > *:nth-child(15) { animation-delay: 0.56s; }
+  .view.active > *:nth-child(16) { animation-delay: 0.6s; }
+  .view.active > *:nth-child(17) { animation-delay: 0.64s; }
+  .view.active > *:nth-child(18) { animation-delay: 0.68s; }
+  .view.active > *:nth-child(19) { animation-delay: 0.72s; }
+  .view.active > *:nth-child(20) { animation-delay: 0.76s; }
+
   /* ─── Hero ─── */
   .hero {
     padding: 3rem 0 3.5rem;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.1s forwards;
   }
 
   .hero h1 {
@@ -128,11 +199,19 @@
     background: var(--border);
   }
 
+  /* ─── Section Label ─── */
+  .section-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+
   /* ─── Stats ─── */
   .stats {
     padding: 3rem 0;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.25s forwards;
   }
 
   .stats-grid {
@@ -141,9 +220,7 @@
     gap: 2rem;
   }
 
-  .stat {
-    text-align: left;
-  }
+  .stat { text-align: left; }
 
   .stat-number {
     font-family: var(--serif);
@@ -165,20 +242,9 @@
     line-height: 1.4;
   }
 
-  /* ─── The Problem (pain points, subtle) ─── */
+  /* ─── The Problem ─── */
   .problem {
     padding: 3rem 0;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.3s forwards;
-  }
-
-  .section-label {
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.25rem;
   }
 
   .problem p {
@@ -194,8 +260,6 @@
   /* ─── How It Works ─── */
   .process {
     padding: 3rem 0;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.35s forwards;
   }
 
   .process-steps {
@@ -212,14 +276,8 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .step:first-child {
-    padding-top: 0;
-  }
-
-  .step:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
+  .step:first-child { padding-top: 0; }
+  .step:last-child { border-bottom: none; padding-bottom: 0; }
 
   .step-num {
     font-family: var(--serif);
@@ -247,8 +305,6 @@
   /* ─── Proof ─── */
   .proof {
     padding: 3rem 0;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.4s forwards;
   }
 
   .proof-cards {
@@ -265,13 +321,8 @@
     transition: border-color 0.2s ease;
   }
 
-  .proof-card:hover {
-    border-color: var(--border-strong);
-  }
-
-  .proof-card.wide {
-    grid-column: 1 / -1;
-  }
+  .proof-card:hover { border-color: var(--border-strong); }
+  .proof-card.wide { grid-column: 1 / -1; }
 
   .proof-org {
     font-size: 0.72rem;
@@ -293,11 +344,9 @@
     font-weight: 600;
   }
 
-  /* ─── About (with photo) ─── */
+  /* ─── About ─── */
   .about {
     padding: 3rem 0;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.45s forwards;
   }
 
   .about-grid {
@@ -316,7 +365,6 @@
     border: 1px solid var(--border);
   }
 
-  /* Placeholder styling when no image loaded */
   .about-photo-placeholder {
     width: 140px;
     height: 170px;
@@ -346,9 +394,7 @@
     line-height: 1.75;
   }
 
-  .about-text p + p {
-    margin-top: 0.75rem;
-  }
+  .about-text p + p { margin-top: 0.75rem; }
 
   .about-tags {
     display: flex;
@@ -368,11 +414,157 @@
     border: 1px solid var(--border);
   }
 
+  /* ─── Case Study Card ─── */
+  .case-study {
+    padding: 3rem 0;
+  }
+
+  .cs-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .cs-card:hover { border-color: var(--border-strong); }
+  .cs-card:last-child { margin-bottom: 0; }
+
+  .cs-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+  }
+
+  .cs-org {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .cs-type {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+    padding-top: 0.25rem;
+  }
+
+  .cs-context {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .cs-body {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+  }
+
+  .cs-body p + p { margin-top: 0.75rem; }
+
+  .cs-outcomes {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .cs-outcomes.three-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cs-outcome-item { text-align: left; }
+
+  .cs-outcome-num {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .cs-outcome-num span { color: var(--accent); }
+
+  .cs-outcome-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    line-height: 1.4;
+  }
+
+  .cs-quote {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background: var(--bg);
+    border-radius: 5px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .cs-quote p {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .cs-quote-attr {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-style: normal;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    font-weight: 500;
+  }
+
+  .cs-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .cs-link:hover { color: var(--accent-hover); }
+
+  .cs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .cs-tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    background: var(--bg-warm);
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+
   /* ─── CTA ─── */
   .cta {
     padding: 3.5rem 0 2rem;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.5s forwards;
   }
 
   .cta-box {
@@ -450,8 +642,6 @@
     align-items: flex-end;
     flex-wrap: wrap;
     gap: 1rem;
-    opacity: 0;
-    animation: fadeUp 0.5s ease 0.55s forwards;
   }
 
   .footer-left {
@@ -499,6 +689,10 @@
   /* ─── Mobile ─── */
   @media (max-width: 600px) {
     .page { padding: 0 1.5rem; }
+    .header { flex-wrap: wrap; gap: 0.75rem; }
+    .header-left { width: 100%; justify-content: space-between; }
+    .nav-tabs { width: 100%; justify-content: flex-start; }
+    .header-tag { display: none; }
     .stats-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .proof-cards { grid-template-columns: 1fr; }
     .about-grid {
@@ -509,10 +703,12 @@
       width: 110px;
       height: 130px;
     }
+    .cs-header { flex-direction: column; gap: 0.35rem; }
+    .cs-outcomes { grid-template-columns: 1fr; gap: 0.75rem; }
+    .cs-outcomes.three-col { grid-template-columns: 1fr; }
     .cta-box { padding: 2rem 1.5rem; }
     .cta-actions { flex-direction: column; }
     .footer { flex-direction: column; align-items: flex-start; }
-    .header-tag { display: none; }
   }
 
   @media (max-width: 400px) {
@@ -520,7 +716,6 @@
     .hero h1 { font-size: 1.6rem; }
   }
 
-  /* ─── Print ─── */
   @media print {
     body::before { display: none; }
     .page { padding: 1rem 0; max-width: none; }
@@ -535,136 +730,371 @@
 
   <!-- ▸ Header -->
   <header class="header">
-    <!-- REPLACE: Add your logo file as "logo.png" in the same directory -->
-     <img src="logo.png" alt="Eduba" class="logo-img"> 
-    <span class="header-tag">Veteran-Owned</span>
+    <div class="header-left">
+      <img src="logo.png" alt="Eduba" class="logo-img">
+      <span class="header-tag">Veteran-Owned</span>
+    </div>
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-view="home">Home</button>
+      <button class="nav-tab" data-view="cases">Case Studies</button>
+    </nav>
   </header>
 
-  <!-- ▸ Hero -->
-  <section class="hero">
-    <h1>Your team has AI tools.<br>They're not sure <em>what to do with them.</em></h1>
-    <div class="hero-body">
-      <p>That's not a training problem. It's a translation problem. Someone needs to sit with your people, learn what they actually do all day, and show them exactly where these tools fit. Not in theory. In their workflows, with their data, on their deadlines.</p>
-      <p>That's what we do.</p>
-    </div>
-  </section>
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- ▸ HOME VIEW                                      -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div id="view-home" class="view active">
 
-  <div class="divider"></div>
-
-  <!-- ▸ Stats -->
-  <section class="stats">
-    <div class="stats-grid">
-      <div class="stat">
-        <div class="stat-number">95<span>%</span></div>
-        <div class="stat-label">still using what we taught<br>after 30 days</div>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Your team has AI tools.<br>They're not sure <em>what to do with them.</em></h1>
+      <div class="hero-body">
+        <p>That's not a training problem. It's a translation problem. Someone needs to sit with your people, learn what they actually do all day, and show them exactly where these tools fit. Not in theory. In their workflows, with their data, on their deadlines.</p>
+        <p>That's what we do.</p>
       </div>
-      <div class="stat">
-        <div class="stat-number">~10<span>%</span></div>
-        <div class="stat-label">industry average<br>for AI training adoption</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">340<span>+</span></div>
-        <div class="stat-label">people trained<br>since May 2025</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <!-- ▸ The Problem -->
-  <section class="problem">
-    <div class="section-label">The real issue</div>
-    <p>Most AI training looks the same. Someone shows your team a bunch of demos, everyone nods, and within a week nobody's changed how they work. The tools sit there. The licenses keep billing. The team goes back to what they were doing before.</p>
-    <p>It's not because the tools are bad. It's because nobody connected them to the actual work. The gap between "look what ChatGPT can do" and "here's how this saves you two hours on Thursday" is where most training falls apart.</p>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ▸ How It Works -->
-  <section class="process">
-    <div class="section-label">How we work</div>
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <h3>We learn your workflows first</h3>
-          <p>Before we train anyone, we spend time understanding what your team actually does. What tools they use, where time disappears, what's tedious, what's high-stakes. This is the part most vendors skip.</p>
+    <!-- Stats -->
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-number">95<span>%</span></div>
+          <div class="stat-label">still using what we taught<br>after 30 days</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">~10<span>%</span></div>
+          <div class="stat-label">industry average<br>for AI training adoption</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">340<span>+</span></div>
+          <div class="stat-label">people trained<br>since May 2025</div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <h3>We train on what the audit uncovered</h3>
-          <p>No generic curriculum. Every session is built around the specific opportunities we found. Your team works with their own tasks, their own data, in real time. They leave with workflows they can use the next morning.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- The Problem -->
+    <section class="problem">
+      <div class="section-label">The real issue</div>
+      <p>Most AI training looks the same. Someone shows your team a bunch of demos, everyone nods, and within a week nobody's changed how they work. The tools sit there. The licenses keep billing. The team goes back to what they were doing before.</p>
+      <p>It's not because the tools are bad. It's because nobody connected them to the actual work. The gap between "look what ChatGPT can do" and "here's how this saves you two hours on Thursday" is where most training falls apart.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- How It Works -->
+    <section class="process">
+      <div class="section-label">How we work</div>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>We learn your workflows first</h3>
+            <p>Before we train anyone, we spend time understanding what your team actually does. What tools they use, where time disappears, what's tedious, what's high-stakes. This is the part most vendors skip.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>We train on what the audit uncovered</h3>
+            <p>No generic curriculum. Every session is built around the specific opportunities we found. Your team works with their own tasks, their own data, in real time. They leave with workflows they can use the next morning.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>We build what makes sense to automate</h3>
+            <p>Some things should be automated. Most shouldn't. We help you tell the difference, then build the agents and workflows that actually earn back the investment. You get agent charters and a 30-day action plan.</p>
+          </div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <h3>We build what makes sense to automate</h3>
-          <p>Some things should be automated. Most shouldn't. We help you tell the difference, then build the agents and workflows that actually earn back the investment. You get agent charters and a 30-day action plan.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Proof -->
+    <section class="proof">
+      <div class="section-label">Recent work</div>
+      <div class="proof-cards">
+        <div class="proof-card">
+          <div class="proof-org">Pacific Life &amp; Colgate-Palmolive</div>
+          <div class="proof-desc"><strong>300+ employees</strong> trained on AI workflow integration across multiple departments. Hands-on sessions built around each team's actual processes.</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-org">KPMG UK</div>
+          <div class="proof-desc"><strong>40+ executives</strong> trained on strategic AI decision-making. Focused on when to invest in AI and when the answer is no.</div>
+        </div>
+        <div class="proof-card wide">
+          <div class="proof-org">University of Edinburgh</div>
+          <div class="proof-desc">Published research on <strong>psychometric assessment of large language models</strong>, applying validated psychological instruments to measure AI behavior. This research informs how we evaluate tools before recommending them.</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <!-- ▸ Proof -->
-  <section class="proof">
-    <div class="section-label">Recent work</div>
-    <div class="proof-cards">
-      <div class="proof-card">
-        <div class="proof-org">Pacific Life &amp; Colgate-Palmolive</div>
-        <div class="proof-desc"><strong>300+ employees</strong> trained on AI workflow integration across multiple departments. Hands-on sessions built around each team's actual processes.</div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-org">KPMG UK</div>
-        <div class="proof-desc"><strong>40+ executives</strong> trained on strategic AI decision-making. Focused on when to invest in AI and when the answer is no.</div>
-      </div>
-      <div class="proof-card wide">
-        <div class="proof-org">University of Edinburgh</div>
-        <div class="proof-desc">Published research on <strong>psychometric assessment of large language models</strong>, applying validated psychological instruments to measure AI behavior. This research informs how we evaluate tools before recommending them.</div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ▸ About -->
-  <section class="about">
-    <div class="section-label">Who you'd be working with</div>
-    <div class="about-grid">
-      <!-- REPLACE: Add your headshot as "headshot.jpg" in the same directory -->
-       <img src="headshot.jpg" alt="Jake Van Clief" class="about-photo"> 
-      <div class="about-text">
-        <h3>Jake Van Clief</h3>
-        <p>I spent eight years in the Marine Corps working on cryptographic systems and fighter jet avionics, where "close enough" isn't a concept that exists. That turned into a master's degree in governance and AI policy at the University of Edinburgh, which turned into this: helping organizations figure out what to actually do with AI, not just what it can theoretically do.</p>
-        <p>The thing I've gotten good at is taking the biggest AI skeptics in a room and making their criticisms the most valuable part of the conversation. Healthy skepticism is an asset. We just need to point it at the right questions.</p>
-        <div class="about-tags">
-          <span class="about-tag">8 Years USMC</span>
-          <span class="about-tag">MSc Future Governance, Edinburgh</span>
-          <span class="about-tag">Veteran-Owned</span>
+    <!-- About -->
+    <section class="about">
+      <div class="section-label">Who you'd be working with</div>
+      <div class="about-grid">
+        <img src="headshot.jpg" alt="Jake Van Clief" class="about-photo">
+        <div class="about-text">
+          <h3>Jake Van Clief</h3>
+          <p>I spent eight years in the Marine Corps working on cryptographic systems and fighter jet avionics, where "close enough" isn't a concept that exists. That turned into a master's degree in governance and AI policy at the University of Edinburgh, which turned into this: helping organizations figure out what to actually do with AI, not just what it can theoretically do.</p>
+          <p>The thing I've gotten good at is taking the biggest AI skeptics in a room and making their criticisms the most valuable part of the conversation. Healthy skepticism is an asset. We just need to point it at the right questions.</p>
+          <div class="about-tags">
+            <span class="about-tag">8 Years USMC</span>
+            <span class="about-tag">MSc Future Governance, Edinburgh</span>
+            <span class="about-tag">Veteran-Owned</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <!-- ▸ CTA -->
-  <section class="cta">
-    <div class="cta-box">
-      <h2>If your team has AI tools they're barely using,<br>that's the conversation I like having.</h2>
-      <p>No pitch deck. No pressure. Just a conversation about what your team does and whether we can help.</p>
-      <div class="cta-actions">
-        <a href="mailto:theceo@eduba.io?subject=Let's%20talk" class="btn">Send me an email</a>
-        <span class="or-call">or call <a href="tel:+13217455209">321-745-5209</a></span>
+    <!-- CTA -->
+    <section class="cta">
+      <div class="cta-box">
+        <h2>If your team has AI tools they're barely using,<br>that's the conversation I like having.</h2>
+        <p>No pitch deck. No pressure. Just a conversation about what your team does and whether we can help.</p>
+        <div class="cta-actions">
+          <a href="mailto:theceo@eduba.io?subject=Let's%20talk" class="btn">Send me an email</a>
+          <span class="or-call">or call <a href="tel:+13217455209">321-745-5209</a></span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ▸ Footer -->
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- ▸ CASE STUDIES VIEW                              -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div id="view-cases" class="view">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>The work speaks<br>for <em>itself.</em></h1>
+      <div class="hero-body">
+        <p>From Fortune 500 training floors to academic research labs, these are the engagements that built our reputation. Not because we told people what AI can do, but because we showed them what to do with it.</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Pacific Life & Colgate-Palmolive -->
+    <section class="case-study">
+      <div class="section-label">Enterprise Training</div>
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-org">Pacific Life &amp; Colgate-Palmolive</div>
+          <div class="cs-type">Ongoing</div>
+        </div>
+        <div class="cs-context">In partnership with Correlation One &nbsp;·&nbsp; May 2025 to present</div>
+        <div class="cs-body">
+          <p>What started as a training engagement has become something more like embedded consulting. Hundreds of employees across both organizations, from frontline teams all the way to executive leadership, trained through single and multi-day sessions built entirely around their existing workflows.</p>
+          <p>The sessions didn't just teach people how to use AI tools. They uncovered where automation actually made sense, and where it didn't. Out of the coursework itself, teams began building agents that are projected to save 2,000 to 3,000 hours annually. But the bigger outcome was what nobody planned for: new value-adds beyond just automation, places where AI could improve decision quality, not just speed.</p>
+        </div>
+        <div class="cs-outcomes three-col">
+          <div class="cs-outcome-item">
+            <div class="cs-outcome-num">300<span>+</span></div>
+            <div class="cs-outcome-label">employees trained<br>and counting</div>
+          </div>
+          <div class="cs-outcome-item">
+            <div class="cs-outcome-num">2-3K</div>
+            <div class="cs-outcome-label">projected hours saved<br>annually from course-built agents</div>
+          </div>
+          <div class="cs-outcome-item">
+            <div class="cs-outcome-num">95<span>%</span></div>
+            <div class="cs-outcome-label">sustained adoption<br>after 30 days</div>
+          </div>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-tag">Workflow Integration</span>
+          <span class="cs-tag">Agent Development</span>
+          <span class="cs-tag">Executive &amp; Frontline</span>
+          <span class="cs-tag">Multi-Day Sessions</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- KPMG UK -->
+    <section class="case-study">
+      <div class="section-label">Executive Advisory</div>
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-org">KPMG UK</div>
+          <div class="cs-type">Completed</div>
+        </div>
+        <div class="cs-context">Executive AI Strategy Workshop &nbsp;·&nbsp; October 2025</div>
+        <div class="cs-body">
+          <p>Forty-plus senior executives needed something that most AI training doesn't offer: an honest conversation about when to invest in AI and when the answer is no. The engagement was built around strategic decision-making, not tool demos. We focused on helping leadership develop the judgment to evaluate AI investments against real operational needs, cutting through vendor narratives to get to what actually matters.</p>
+        </div>
+        <div class="cs-outcomes">
+          <div class="cs-outcome-item">
+            <div class="cs-outcome-num">40<span>+</span></div>
+            <div class="cs-outcome-label">senior executives trained</div>
+          </div>
+          <div class="cs-outcome-item">
+            <div class="cs-outcome-num">1</div>
+            <div class="cs-outcome-label">core question: when<br>should the answer be no?</div>
+          </div>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-tag">Strategic AI Decision-Making</span>
+          <span class="cs-tag">Executive Workshop</span>
+          <span class="cs-tag">Global Consultancy</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- IAG -->
+    <section class="case-study">
+      <div class="section-label">Aviation &amp; Innovation</div>
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-org">International Airlines Group</div>
+          <div class="cs-type">Completed</div>
+        </div>
+        <div class="cs-context">AI Training for Innovation Team &nbsp;·&nbsp; IAG (British Airways, Iberia, Vueling, Aer Lingus parent)</div>
+        <div class="cs-body">
+          <p>Training delivered to IAG's innovation division, helping one of the world's largest airline groups think through where AI fits within development, thought leadership, and customer experience operations. The kind of environment where getting it wrong isn't just expensive, it's felt by millions of passengers.</p>
+        </div>
+        <div class="cs-quote">
+          <p>&ldquo;A pleasure working with Jake and his team at Eduba.&rdquo;</p>
+          <div class="cs-quote-attr">Lissa Pritchard &nbsp;·&nbsp; Head of Innovation: Development, Thought Leadership &amp; Customer Experience, IAG</div>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-tag">Innovation Strategy</span>
+          <span class="cs-tag">Customer Experience</span>
+          <span class="cs-tag">Aviation</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Vigilore / Armetour -->
+    <section class="case-study">
+      <div class="section-label">Defense &amp; Intelligence</div>
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-org">Vigilore &nbsp;/&nbsp; Armetour</div>
+          <div class="cs-type">Ongoing</div>
+        </div>
+        <div class="cs-context">AI Integration for Defense Operations</div>
+        <div class="cs-body">
+          <p>Working with Armetour's defense and intelligence teams to integrate AI capabilities into operational workflows. This engagement draws on the same zero-defect thinking that comes from working on systems where failure isn't an abstraction. When the stakes are this high, computational orchestration matters: knowing which layer each problem belongs on, whether that's AI, traditional code, human judgment, or a decision not to build it at all.</p>
+        </div>
+        <div class="cs-quote">
+          <p>&ldquo;Always ahead of the competition and ready to deliver and exceed expectations.&rdquo;</p>
+          <div class="cs-quote-attr">Andrew Sdunich &nbsp;·&nbsp; Armetour</div>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-tag">Defense</span>
+          <span class="cs-tag">Intelligence</span>
+          <span class="cs-tag">Computational Orchestration</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Ethics Engine -->
+    <section class="case-study">
+      <div class="section-label">Research</div>
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-org">The Ethics Engine</div>
+          <div class="cs-type">Published</div>
+        </div>
+        <div class="cs-context">Neuroplastics Lab, University of Edinburgh &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2510.11742" class="cs-link" style="margin-top:0;display:inline;">arxiv.org/abs/2510.11742</a></div>
+        <div class="cs-body">
+          <p>Most organizations choose AI tools based on marketing. We built a methodology to evaluate them using validated psychological instruments, the same psychometric frameworks applied to humans, now applied at scale to large language models. The Ethics Engine gives organizations something they've never had before: an empirical, repeatable way to assess the behavioral tendencies of the models they're trusting with their work.</p>
+          <p>Being able to evaluate these models at all was the hard part. Doing it at scale is what makes it useful.</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-tag">Psychometric Assessment</span>
+          <span class="cs-tag">LLM Evaluation</span>
+          <span class="cs-tag">Published Research</span>
+          <span class="cs-tag">University of Edinburgh</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ICR Research -->
+    <section class="case-study">
+      <div class="section-label">Academic Publishing</div>
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-org">ICR Research</div>
+          <div class="cs-type">Published</div>
+        </div>
+        <div class="cs-context">Research Engagement</div>
+        <div class="cs-body">
+          <p>The engagement went well enough that ICR made a decision they hadn't made in over a decade: they wanted to produce a hard copy of the study. That's not a metric you find on a dashboard, but it tells you something about the quality of the work. When a research organization breaks a ten-year pattern to put your findings in print, the work did its job.</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-tag">Research</span>
+          <span class="cs-tag">First Hard Copy in 10+ Years</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Flagler College -->
+    <section class="case-study">
+      <div class="section-label">Where it started</div>
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-org">Flagler College</div>
+          <div class="cs-type">2022-2024</div>
+        </div>
+        <div class="cs-context">Faculty AI Workshops &amp; Academic Research &nbsp;·&nbsp; St. Augustine, FL</div>
+        <div class="cs-body">
+          <p>Before the Fortune 500 engagements, before the global consultancies, the work started here. After using AI to produce research that was accepted to Flagler's Saints Academic Review, faculty started asking how it was done. That turned into contracted AI workshops for the college, teaching professors how to think about these tools in the classroom.</p>
+          <p>It was the first time the tables turned from student to teacher, and it proved something that still holds: the people most skeptical of AI often become its most thoughtful adopters, if someone takes the time to connect it to their actual work.</p>
+        </div>
+        <div class="cs-quote">
+          <p>&ldquo;Whoa, this is a really good use of AI. How do you do this?&rdquo;</p>
+          <div class="cs-quote-attr">Faculty response, as reported by Flagler College News</div>
+        </div>
+        <a href="https://www.flagler.edu/news-events/news/uncovering-benefits-ai-education-flagler-grads-journey" class="cs-link" target="_blank">Read the full Flagler College feature &rarr;</a>
+        <div class="cs-tags">
+          <span class="cs-tag">Higher Education</span>
+          <span class="cs-tag">Faculty Training</span>
+          <span class="cs-tag">Where It All Started</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="cta-box">
+        <h2>Your team could be the next one<br>that actually uses what they learned.</h2>
+        <p>No pitch deck. No pressure. Just a conversation about what your team does and whether we can help.</p>
+        <div class="cta-actions">
+          <a href="mailto:theceo@eduba.io?subject=Let's%20talk" class="btn">Send me an email</a>
+          <span class="or-call">or call <a href="tel:+13217455209">321-745-5209</a></span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ▸ Footer (shared) -->
   <footer class="footer">
     <div class="footer-left">
       <strong>Eduba</strong><br>
@@ -678,6 +1108,50 @@
   </footer>
 
 </div>
+
+<script>
+  // Tab switching
+  const tabs = document.querySelectorAll('.nav-tab');
+  const views = document.querySelectorAll('.view');
+
+  function switchView(viewName) {
+    // Update tabs
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.view === viewName));
+
+    // Update views
+    views.forEach(v => v.classList.remove('active'));
+    const target = document.getElementById('view-' + viewName);
+    if (target) {
+      target.classList.add('active');
+      // Re-trigger animations by briefly removing and re-adding
+      target.querySelectorAll(':scope > *').forEach(el => {
+        el.style.animation = 'none';
+        el.offsetHeight; // force reflow
+        el.style.animation = '';
+      });
+    }
+
+    // Update page title
+    document.title = viewName === 'cases'
+      ? 'Eduba | Case Studies'
+      : 'Eduba | AI Training That Actually Sticks';
+
+    // Update URL hash without scrolling
+    history.replaceState(null, '', viewName === 'home' ? window.location.pathname : '#cases');
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => switchView(tab.dataset.view));
+  });
+
+  // Handle direct link to #cases
+  if (window.location.hash === '#cases') {
+    switchView('cases');
+  }
+</script>
 
 </body>
 </html>
